@@ -1,0 +1,43 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:SidebarMenu.ViewModels"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:materialIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="SidebarMenu.Views.UserControlMenuItem"
+             x:DataType="vm:ItemMenu">
+    <Design.DataContext>
+        <vm:ItemMenu/>
+    </Design.DataContext>
+    <Grid>
+        <materialIcons:MaterialIcon Kind="{Binding Path=Icon}"
+                                    Width="15" Height="15"
+                                    Margin="10 16"
+                                    Foreground="White"
+                                    HorizontalAlignment="Left"/>
+        <ListBoxItem Name="ListViewItemMenu"
+                     Content="{Binding Path=Header}"
+                     Padding="57 14"
+                     FontSize="15"
+                     Foreground="White"/>
+        <Expander x:Name="ExpanderMenu"
+                  Header="{Binding Path=Header}"
+                  IsExpanded="False"
+                  Width="210"
+                  HorizontalAlignment="Right"
+                  Background="{x:Null}"
+                  BorderBrush="{x:Null}"
+                  Foreground="White">
+            <ListBox Items="{Binding Path=SubItems}"
+                     Background="{x:Null}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Path=Name}"
+                                   Padding="20 5"/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Expander>
+    </Grid>
+</UserControl>

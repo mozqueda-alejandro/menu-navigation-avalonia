@@ -1,0 +1,15 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:sty="using:FluentAvalonia.Styling"
+             xmlns:ui="using:FluentAvalonia.UI.Controls"
+             xmlns:uip="using:FluentAvalonia.UI.Controls.Primitives"
+             xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+             x:Class="SidebarMenu.App">
+
+    <Application.Styles>
+        <FluentTheme Mode="Dark"/>
+
+        <sty:FluentAvaloniaTheme/>
+        <avalonia:MaterialIconStyles/>
+    </Application.Styles>
+</Application>

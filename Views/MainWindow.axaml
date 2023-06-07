@@ -1,0 +1,40 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:SidebarMenu.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="SidebarMenu.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Sidebar Menu Test"
+        Background="#121212">
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+    <Grid ColumnDefinitions="250,*" RowDefinitions="Auto,*">
+        <Border Grid.ColumnSpan="2" Grid.Row="0"
+                Background="#08214a"
+                Height="50"
+                HorizontalAlignment="Stretch">
+            
+        </Border>
+        <Grid Grid.Column="0" Grid.Row="1"
+              HorizontalAlignment="Stretch"
+              RowDefinitions="7,326*"
+              Background="#090909">
+            <ScrollViewer Grid.Column="0" Grid.Row="1"
+                          HorizontalAlignment="Stretch"
+                          HorizontalScrollBarVisibility="Disabled"
+                          VerticalScrollBarVisibility="Auto"
+                          >
+                <StackPanel Name="Menu"
+                            Margin="10"/>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+
+</Window>
